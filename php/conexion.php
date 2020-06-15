@@ -17,7 +17,7 @@ class Conexion{
         //return $l["Nombre"];
         return $this->cn->query($sql);
     }
-    protected function blackList($cadena){
+    public function blackList($cadena){
         $str=str_split($cadena);
         $filtado="";
 
