@@ -1,6 +1,22 @@
 <?php
-	require("../menu_veterinario.php");
+	
 	require("../php/veterinario.php");
+	if(!$_SESSION["Priviliegios"]){
+        header("location:../index.php");
+    }else{
+
+		switch($_SESSION["Priviliegios"]){
+			case 1:
+				require("../menu_admin.php");
+			break;
+			case 2:
+				require("../menu_veterinario.php");
+			break;
+			case 3:
+				require("../menu.php");
+			break;
+		}
+  }
 	
 	$expedientes= new Expediente();
 	if(isset($_POST["enviarDatosExpediente"])){

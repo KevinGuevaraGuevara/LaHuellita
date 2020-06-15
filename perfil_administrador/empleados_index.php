@@ -1,6 +1,22 @@
 <?php
-	require("../menu.php");
+
 	require("../php/inicio.php");
+	if(!$_SESSION["Priviliegios"]){
+        header("location:../index.php");
+    }else{
+
+		switch($_SESSION["Priviliegios"]){
+			case 1:
+				require("../menu_admin.php");
+			break;
+			case 2:
+				require("../menu_admin_veterinario.php");
+			break;
+			case 3:
+				require("../menu.php");
+			break;
+		}
+  }
 	
 	$empleado = new inicioSesion();
 	if(isset($_POST["Registrar"])){
@@ -18,7 +34,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registro de mascotas</title>
+	<title>Registro de empleados</title>
 	    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../font-awesome/css/all.css">
         <link rel="stylesheet" href="../css/menu-estilos.css">
@@ -40,7 +56,7 @@
 		<hr class="line">
 		<div class="row justify-content-center">
 			<div class="col-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
-				<h4 class="title-page">Registro de pacientes</h4>
+				<h4 class="title-page">Registro de empleados</h4>
 			</div>
 		</div>
 		<div class="table-responsive">

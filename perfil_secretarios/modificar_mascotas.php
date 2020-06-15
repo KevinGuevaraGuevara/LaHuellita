@@ -1,6 +1,22 @@
 <?php
-	require("../menu.php");
+	
 	require("../php/mascotas.php");
+	if(!$_SESSION["Priviliegios"]){
+        header("location:../index.php");
+    }else{
+
+		switch($_SESSION["Priviliegios"]){
+			case 1:
+				require("../menu_admin.php");
+			break;
+			case 2:
+				header("location:../index.php");
+			break;
+			case 3:
+				require("../menu.php");
+			break;
+		}
+  }
 	$mascotas= new Mascotas();
 	$mascota=$_POST["mascota"];
 	$datos=$mascotas->selectM($mascota)->fetch_assoc();
