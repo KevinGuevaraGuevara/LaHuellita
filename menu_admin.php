@@ -40,6 +40,8 @@
                           </svg>
                             Inicio
                         </a>
+                        </li>
+                        <li>
                           <a href="#petSubmenu" data-toggle="collapse" aria-expanded="false">
                             <svg class="bi bi-pencil-square" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z"/>
@@ -71,8 +73,22 @@
                             <li><a href="citas_index.php">Programar nueva cita</a></li>
                         </ul>
                     </li>
-
-                    
+     
+                    <li>
+                            <a href="#medSubmenu" data-toggle="collapse" aria-expanded="false">
+                                <svg class="bi bi-circle-half" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 100-6 3 3 0 000 6zm-5.784 6A2.238 2.238 0 015 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 005 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" clip-rule="evenodd"/>
+                            </svg>
+                                Medicamentos<svg class="bi bi-circle-half" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 01.753 1.659l-4.796 5.48a1 1 0 01-1.506 0z"/>
+                                </svg>
+                            </a>
+                            
+                            <ul class="collapse list-unstyled" id="medSubmenu">
+                                <li><a href="#">Registros</a></li>
+                                <li><a href="Medicamentos_agregar.php">Agregar nuevo</a></li>
+                            </ul>
+                        </li>
                    
                     <li>
                         <a href="#">
@@ -84,16 +100,7 @@
                             Stock
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
-                            <svg class="bi bi-people-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 008 15a6.987 6.987 0 005.468-2.63z"/>
-                            <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
-                            <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z" clip-rule="evenodd"/>
-                            </svg>
-                            
-                        </a>
-                    </li>
+                   
                      <li>
                      <a href="../cerrar.php">
                         <svg class="bi bi-power" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
