@@ -51,8 +51,8 @@
                         </a>
                         
                         <ul class="collapse list-unstyled" id="petSubmenu">
-                        <li><a href="mascota_agregar.php">Ver lista de empleados</a></li>
-                            <li><a href="mascota_agregar.php">Agregar nuevo</a></li>
+                        <li><a href="../perfil_secretarios/mascota_index.php">Ver lista de empleados</a></li>
+                            <li><a href="../perfil_secretarios/mascota_agregar.php">Agregar nuevo</a></li>
                         </ul>
                         
                     </li>
@@ -67,8 +67,8 @@
                             </svg>
                         </a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li><a href="citas_index.php">Registro de citas</a></li>
-                            <li><a href="citas_index.php">Programar nueva cita</a></li>
+                            <li><a href="../perfil_secretarios/citas_index.php">Registro de citas</a></li>
+                            <li><a href="../perfil_secretarios/citas_agregar.php">Programar nueva cita</a></li>
                         </ul>
                     </li>
 
@@ -81,18 +81,23 @@
                             <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
                             <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z" clip-rule="evenodd"/>
                             </svg>
-                            Stock
+                            Medicamentos
                         </a>
                     </li>
                     <li>
-                        <a href="#">
-                            <svg class="bi bi-people-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 008 15a6.987 6.987 0 005.468-2.63z"/>
-                            <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
-                            <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z" clip-rule="evenodd"/>
+                        <a href="#rectSubmenu" data-toggle="collapse" aria-expanded="false">
+                            <svg class="bi bi-calendar" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M14 0H2a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M6.5 7a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm-9 3a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm-9 3a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2zm3 0a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+                           </svg>
+                            Recetas<svg class="bi bi-caret-down-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 01.753 1.659l-4.796 5.48a1 1 0 01-1.506 0z"/>
                             </svg>
-                            
                         </a>
+                        <ul class="collapse list-unstyled" id="rectSubmenu">
+                            <li><a href="../perfil_veterinario/recetas_index.php">Registro de recetas</a></li>
+                            <li><a href="../perfil_secretarios/recetas_agregar.php">Extender nueva receta</a></li>
+                        </ul>
                     </li>
                      <li>
                      <a href="../cerrar.php">

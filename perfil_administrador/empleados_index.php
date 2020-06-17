@@ -1,5 +1,5 @@
 <?php
-	require("../menu.php");
+	require("../menu_admin.php");
 	require("../php/inicio.php");
 	
 	$empleado = new inicioSesion();
@@ -10,7 +10,7 @@
 		$empleados->setNombre($Nombre);
 		$empleados->setPrivilegios($privilegios);
 		$empleados->setApellido($apellido);
-		$empleados->ediatrEmpleado($usuario);
+		$empleados->editarEmpleado($usuario);
 	}
 	
 ?>
@@ -18,7 +18,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registro de mascotas</title>
+	<title>Empleados</title>
 	    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../font-awesome/css/all.css">
         <link rel="stylesheet" href="../css/menu-estilos.css">
@@ -34,13 +34,13 @@
 		<input type="text" class="form-control" id="busqueda" placeholder="Nombre" onkeyup="cargarDatos()">
 		</div>
 			<div class="col-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
-				<a href="mascota_agregar.php"><button type="button" class="btn btn-agg" name="agregarCliente"><i class="fas fa-plus"></i>Agregar nuevo paciente</button></a>
+				<a href="mascota_agregar.php"><button type="button" class="btn btn-agg" name="agregarCliente"><i class="fas fa-plus"></i>Agregar nuevo empleado</button></a>
 			</div>
 		</div>
 		<hr class="line">
 		<div class="row justify-content-center">
 			<div class="col-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
-				<h4 class="title-page">Registro de pacientes</h4>
+				<h4 class="title-page">Registro de empleados</h4>
 			</div>
 		</div>
 		<div class="table-responsive">

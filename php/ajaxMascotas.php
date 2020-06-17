@@ -3,7 +3,7 @@ require ("mascotas.php");
 
 $mascotas= new Mascotas();
 $nombre=$_GET["dato"];
-$salida="<table class='table table-stripe'>
+$salida="<table class='table table-striped'>
 				
 		<tr>
 	    <th>Id paciente</th>

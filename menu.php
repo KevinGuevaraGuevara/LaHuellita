@@ -50,8 +50,8 @@
                             </a>
                             
                             <ul class="collapse list-unstyled" id="petSubmenu">
-                                <li><a href="mascota_index.php">Registro de pacientes</a></li>
-                                <li><a href="mascota_agregar.php">Agregar nuevo</a></li>
+                                <li><a href="../perfil_secretarios/mascota_index.php">Registro de pacientes</a></li>
+                                <li><a href="../perfil_secretarios/mascota_agregar.php">Agregar nuevo</a></li>
                             </ul>
                         </li>
                         <li >
@@ -65,8 +65,8 @@
                                 </svg>
                             </a>
                             <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <li><a href="citas_agregar.php">Programar cita</a></li>
-                                <li><a href="citas_index.php">Consultar historial</a></li>
+                                <li><a href="../perfil_secretarios/citas_agregar.php">Programar cita</a></li>
+                                <li><a href="../perfil_secretarios/citas_index.php">Consultar historial</a></li>
                             </ul>
                         </li>
                       
@@ -82,19 +82,12 @@
                             </a>
                             
                             <ul class="collapse list-unstyled" id="clientSubmenu">
-                                <li><a href="cliente_index.php">Registros</a></li>
-                                <li><a href="clientes_agregar.php">Agregar nuevo</a></li>
+                                <li><a href="../perfil_secretarios/cliente_index.php">Registros</a></li>
+                                <li><a href="../perfil_secretarios/clientes_agregar.php">Agregar nuevo</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#">
-                                <svg class="bi bi-people-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 008 15a6.987 6.987 0 005.468-2.63z"/>
-                                <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
-                                <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z" clip-rule="evenodd"/>
-                                </svg>
-                                Perfil
-                            </a>
+                            
                         </li>
                          <li>
                             <a href="../cerrar.php">

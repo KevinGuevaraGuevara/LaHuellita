@@ -11,6 +11,7 @@
              <th>Privilegio</th>
              <th>Opciones</th>
              </tr>
+             </tr>
              <tr>
              ";
              $listar=$listEmpleados->select($nombre);
@@ -20,7 +21,8 @@
                      $salida.="<td>$e[DUI]</td>
                      <td>$e[Nombre_Empleado]</td>
                      <td>$e[Apellido]</td>
-                     <td>$e[Usuario]</td>";
+                     <td>$e[Usuario]</td>
+                     ";
 
                 $salida.="<td><button type='button' class='btn btn-forms' values='$e[DUI]' name='verInfoExpnt'><i class='far fa-edit'></i>Editar</button>
                 <button type='button' class='btn btn-forms' name='eliminarExpnt'><i class='far fa-trash-alt'></i>Eliminar</button></td>
