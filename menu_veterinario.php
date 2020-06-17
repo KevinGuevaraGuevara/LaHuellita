@@ -1,8 +1,8 @@
 <?php
-    session_start();
-    if(!isset($_SESSION["usuario"])){
-        header("location:../index.php");
-    }
+    //session_start();
+    //if(!isset($_SESSION["usuario"])){
+    //    header("location:../index.php");
+    //}
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,8 +10,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-        <title></title>
 
          <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -55,7 +53,7 @@
                         </ul>
                         
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
                             <svg class="bi bi-calendar" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M14 0H2a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" clip-rule="evenodd"/>

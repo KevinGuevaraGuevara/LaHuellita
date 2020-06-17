@@ -4,7 +4,7 @@ use PHPUnit\Framework\TestCase;
 final class ConexionTest extends TestCase{
     public function testblackList(){
         $obj=new Conexion;
-        $this->assertEquals("Hola mundo",$obj->blackList('Hola mundo'));
+        $this->assertEquals("Hola mundo",$obj->blackList('Hola, "mundo'));
     }
 }
 ?>

@@ -1,6 +1,6 @@
 <?php
 	
-	require("../php/mascotas.php");
+	require("../php/recetas.php");
 	if(!$_SESSION["Priviliegios"]){
         header("location:../index.php");
     }else{
@@ -17,15 +17,16 @@
 			break;
 		}
   }
-
-	$mascotas= new Mascotas();
+	$recetas= new Receta();
+	$receta=$_POST["receta"];
+	$datos=$recetas->select($receta)->fetch_assoc();
 	
-?>
+	?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Agregar cliente</title>
+	<title>Modificar informacion</title>
 	    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../font-awesome/css/all.css">
         <link rel="stylesheet" href="../css/menu-estilos.css">
@@ -49,32 +50,27 @@
 		<div class="row">
 			<div class="col col-lg-12 col-md-8 col-sm-4">
 				<div class="bg-form">
-			<h4><i class="fas fa-dog"></i>Registrar nuevo paciente</h4>
+			<h4><i class="far fa-clock"></i>Modificar datos de la receta/h4>
 			<hr class="line">
-			<form method="POST">
+			<form method="POST" action="recetas_index.php">
+		
+
 			
-			<div class="row mt-4 justify-content-center">
-				<div class="col-6">
-					<label>Nombre del paciente</label>
-					<input type="text" name="nombre" class="form-control">
-				</div>
-		  </div>
 		  <div class="row mt-4 justify-content-center">
 				<div class="col-6">
-					<label>Fecha de nacimiento</label>
-					<input type="date" name="fecha" class="form-control" required>
-				</div>
-		  </div>
-		  <div class="row mt-4 justify-content-center">
-				<div class="col-6">
-					<label>Raza</label>
+					<label>Paciente</label>
 					<?php
 					
-					$razas=$mascotas->selectRazas();
-					echo "<select class='form-control' name='raza'>";
+					$pacientes=$receta->selectPaciente();
+					echo "<select class='form-control' name='pacientes'>";
 					
-					while($raza=$razas->fetch_assoc()){
-						echo "<option value='$raza[Id_raza]'>$raza[Raza]</option>";
+					while($paciente=$pacientes->fetch_assoc()){
+						if($datos['Id_mascota']==$paciente['Id_mascota']){
+							echo "<option selected value='$paciente[Id_mascota]'>$paciente[Mascota]</option>";
+						}else{
+
+							echo "<option value='$paciente[Id_mascota]'>$paciente[Mascota]</option>";
+						}
 					}
 					echo "</select>";
 					?>
@@ -85,11 +81,15 @@
 					<label>Sexo</label>
 					<?php
 					
-					$sexos=$mascotas->selectSexos();
+					$estados=$recetas->selectEstado();
 					echo "<select class='form-control' name='sexo'>";
-					
-					while($sexo=$sexos->fetch_assoc()){
-						echo "<option value='$sexo[Identificador]'>$sexo[sexo]</option>";
+
+					while($estado=$estados->fetch_assoc()){
+						if($datos['sexo']==$estado['estado']){
+							echo "<option selected value='$estado[Id_Estado]'>$estado[Estado]</option>";
+						}else{
+							echo "<option value='$estado[Id_Estado]'>$estado[Estado]</option>";
+						}
 	
 					}
 					echo "</select>";
@@ -102,11 +102,16 @@
 					<label>Dueño</label>
 					<?php
 					
-					$dueños=$mascotas->selectDueño();
-					echo "<select class='form-control' name='dueño'>";
+					$medicamentos=$recetas->selectMedicamento();
+					echo "<select class='form-control' name='medicamento'>";
 					
-					while($dueño=$dueños->fetch_assoc()){
-						echo "<option value='$dueño[Id_Cliente]'>$dueño[Nombre_Cliente] $dueño[Apelido_Cliente]</option>";
+					while($medicamento=$medicamentos->fetch_assoc()){
+						if($datos['Id_cliente']==$medicamento['Id_Cliente']){
+							echo "<option selected value='$medicamento[Id_Medicamento]'>$medicamento[Medicamento]</option>";
+						}else{
+
+							echo "<option value='$medicamento[Id_Medicamento]'>$medicamento[Medicamento]</option>";
+						}
 					}
 					echo "</select>";
 					?>
@@ -114,33 +119,25 @@
 					
 				</div>
 		  </div>
+          <div class="row mt-4 justify-content-center">
+				<div class="col-6">
+					<label>Cantidad</label>
+					<input type="number" name="cantidad" class="form-control" value='<?php echo $datos["Cantidad"]?>'>
+				</div>
+		  </div>
 		  <div class="row mt-4 justify-content-center">
 				<div class="col-6">
-					<input type="submit" name="enviarDatosMascota" class="btn btn-forms" value="Registrar">
+					<input type="submit" name="enviarDatosMascota" class="btn btn-forms" value="Modificar">
 					<input type="reset" name="cancelar" class="btn btn-forms" value="Limpiar">
 				</div>
 		  </div>
+		  <input type="text" name="id" class="invisible" value='<?php echo $receta?>'>
 		</form>
 	</div>
 </div>
-</div>
-		
-		
+</div>			
 	</div>
-	<?php
-	if(isset($_POST["enviarDatosMascota"])){
-		//echo $_POST["fecha"];
-
-		$mascotas->setNombre($_POST["nombre"]);
-		$mascotas->setFechanacimiento($_POST["fecha"]);
-		$mascotas->setRaza($_POST["raza"]);
-		$mascotas->setDueño($_POST["dueño"]);
-		$mascotas->setSexo($_POST["sexo"]);
-		$mascotas->insert();
-
-	}
-	?>
-
+    
 	<!-- jQuery CDN -->
   <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 

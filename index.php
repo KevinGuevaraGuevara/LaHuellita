@@ -1,7 +1,7 @@
 <?php
     require("php/inicio.php");
 	$inicio2= new inicioSesion;
-	session_start();
+	//session_start();
 ?>
 
 <!DOCTYPE html>

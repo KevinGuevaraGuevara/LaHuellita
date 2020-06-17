@@ -1,41 +1,30 @@
 <?php
-	require("../php/mascotas.php");
-	if(!$_SESSION["Priviliegios"]){
-        header("location:../index.php");
-    }else{
+require("../php/Medicamentos.php");
+//require("../php/conexion.php");
+if(!$_SESSION["Priviliegios"]){
+    header("location:../index.php");
+}else{
 
-		switch($_SESSION["Priviliegios"]){
-			case 1:
-				require("../menu_admin.php");
-			break;
-			case 2:
-				require("../menu_veterinario.php");
-			break;
-			case 3:
-				require("../menu.php");
-			break;
-		}
-  }
-	
-	$mascotas= new Mascotas();
-	if(isset($_POST["enviarDatosMascota"])){
-		//echo $_POST["fecha"];
-		$mascotas->setNombre($_POST["nombre"]);
-		$mascotas->setFechanacimiento($_POST["fecha"]);
-		$mascotas->setRaza($_POST["raza"]);
-		$mascotas->setDueño($_POST["dueño"]);
-		$mascotas->setSexo($_POST["sexo"]);
-        $mascotas->modificar($_POST["id"]);
-		//header("location:mascota_index.php.php");
+    switch($_SESSION["Priviliegios"]){
+        case 1:
+            require("../menu_admin.php");
+        break;
+        case 2:
+            header("location:../index.php");
+        break;
+        case 3:
+            require("../menu.php");
+        break;
+    }
+}
+$medicina= new Medicamentos();
 
-	}
-	
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registro de mascotas</title>
+	<title>Registro de medicamentos</title>
 	    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../font-awesome/css/all.css">
         <link rel="stylesheet" href="../css/menu-estilos.css">
@@ -44,11 +33,11 @@
 <body onload="cargarDatos()">
 
 	<div class="container shadow p-3 mb-5 bg-white rounded">
-		<form action="modificar_mascotas.php" method="POST">
+		<form method="POST">
 		<div class="row justify-content-start">
 		<div class="col-4 align-content-start mt-4">
 		<label for="busqueda">Buscar:</label>
-		<input type="text" class="form-control" id="busqueda" placeholder="Nombre" onkeyup="cargarDatos()">
+		<input type="text" class="form-control" id="busqueda" name="busqueda" placeholder="Nombre" onkeyup="cargarDatos()">
 		</div>
 			<div class="col-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
 				<a href="mascota_agregar.php"><button type="button" class="btn btn-agg" name="agregarCliente"><i class="fas fa-plus"></i>Agregar nuevo paciente</button></a>
@@ -57,13 +46,16 @@
 		<hr class="line">
 		<div class="row justify-content-center">
 			<div class="col-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
-				<h4 class="title-page">Registro de pacientes</h4>
+				<h4 class="title-page">Registro de medicamentos</h4>
 			</div>
 		</div>
 		<div class="table-responsive">
-			<div id="respuesta"></div>
+        <div id="respuesta"></div>
 		</div>
 		</div>
+        <div>
+            <input type="submit" Value="Agregar" class="btn btn-success">
+        </div>
 		</form>
 	</div>
 
@@ -77,8 +69,19 @@ function cargarDatos() {
 			document.getElementById("respuesta").innerHTML = this.responseText;
 		}
 	};
-	xhttp.open("GET", `../php/ajaxMascotas.php?dato=${dato}`,true);
+	xhttp.open("GET", `../php/ajaxMedicamentos.php?dato=${dato}`,true);
 	xhttp.send();
 }
 </script>
+<?php
+if(isset($_POST["agregar"])){
+    $med=$_POST["agregar"];
+    $cantidad=$_POST[$med];
+    $fecha= date("Y")."-";
+    $fecha.= date("m")."-";
+    $fecha.= date("d");
+
+    $medicina->agregar($med,$cantidad,$fecha);
+}
+?>
 </html>

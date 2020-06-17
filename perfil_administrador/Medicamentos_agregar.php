@@ -1,6 +1,7 @@
 <?php
-	
-	require("../php/Clientes.php");
+	//require("../menu.php");
+	require("../php/Medicamentos.php");
+	//require("../php/conexion.php");
 	if(!$_SESSION["Priviliegios"]){
         header("location:../index.php");
     }else{
@@ -17,12 +18,14 @@
 			break;
 		}
   }
+	$medicina= new Medicamentos();
+	
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Agregar cliente</title>
+	<title>Agregar nuevo medicamento</title>
 	    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../font-awesome/css/all.css">
         <link rel="stylesheet" href="../css/menu-estilos.css">
@@ -46,34 +49,33 @@
 		<div class="row">
 			<div class="col col-lg-12 col-md-8 col-sm-4">
 				<div class="bg-form">
-			<h4><svg class="bi bi-person-plus-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"                xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 100-6 3 3 0 000 6zm7.5-3a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-                            <path fill-rule="evenodd" d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"/>
-                       </svg>Registro de clientes</h4>
+			<h4><i class="far fa-clock"></i>Programar nueva cita</h4>
 			<hr class="line">
-			<form method="POST" action="clientes_agregar.php">
-			
+			<form method="POST">
+		
 			<div class="row mt-4 justify-content-center">
 				<div class="col-6">
-					<label>Nombre</label>
-					<input type="text" name="Nombre" class="form-control" required>
+					<label for="medicamento">Nombre del medicamento</label>
+					<input type="text" id="medicamento" name="medicamento" class="form-control" required>
+					
 				</div>
 		  </div>
 		  <div class="row mt-4 justify-content-center">
 				<div class="col-6">
-					<label>Apellido</label>
-					<input type="text" name="Apellido" class="form-control" required>
+					<label for="Detalles">Detalles</label>
+					<input type="text" id="Detalles" name="Detalles" class="form-control">
 				</div>
 		  </div>
 		  <div class="row mt-4 justify-content-center">
 				<div class="col-6">
-					<label>Número telefónico</label>
-					<input type="text" name="telefónico" class="form-control" placeholder="0000-0000" required>
+					<label>Minimo en existencias</label>
+					<input type="number" name="Minimo" class="form-control" min=0 value=0 required>
 				</div>
 		  </div>
+		  
 		  <div class="row mt-4 justify-content-center">
 				<div class="col-6">
-					<input type="submit" name="Registrar" class="btn btn-forms" value="Registrar">
+					<input type="submit" name="enviarDatos" class="btn btn-forms" value="Registrar">
 					<input type="reset" name="cancelar" class="btn btn-forms" value="Limpiar">
 				</div>
 		  </div>
@@ -81,16 +83,18 @@
 	</div>
 </div>
 </div>
-		
-</div>
-<?php
-	if(isset($_POST["Registrar"])){
-		$clientes=new Clientes;
-		$clientes->insert($_POST["Nombre"],$_POST["Apellido"],$_POST["telefónico"]);
+				
+	</div>
+	<?php
+	if(isset($_POST["enviarDatos"])){
+		//echo $_POST["fecha"];
+		$medicina->insert($_POST["medicamento"],$_POST["Minimo"],$_POST["Detalles"]);
 	}
-?>
+	?>
+
 	<!-- jQuery CDN -->
   <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 
 </body>
 </html>
+

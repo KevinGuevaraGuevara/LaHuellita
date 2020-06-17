@@ -7,7 +7,7 @@
                         $receta->setPaciente($_POST["paciente"]);
                         $receta->setCantidad($_POST["cantidad"]);
                         $receta->setEstado($_POST["estadoReceta"]);
-
+						$receta->editar($_POST["id"])
                     }
 ?>
 <!DOCTYPE html>
