@@ -87,21 +87,7 @@ INSERT INTO `clientes` (`Id_Cliente`, `Nombre_Cliente`, `Apelido_Cliente`, `Tele
 
 -- --------------------------------------------------------
 
---
--- veterinaria.empleados definition
-
-CREATE TABLE `empleados` (
-  `DUI` varchar(10) NOT NULL,
-  `Nombre_Empleado` varchar(40) DEFAULT NULL,
-  `Apellido` varchar(40) DEFAULT NULL,
-  `Priviliegios` int(2) DEFAULT NULL,
-  `usuario` varchar(100) NOT NULL,
-  `contrasenia` varchar(100) NOT NULL,
-  PRIMARY KEY (`DUI`),
-  KEY `FKPrivilegios` (`Priviliegios`),
-  CONSTRAINT `FKPrivilegios` FOREIGN KEY (`Priviliegios`) REFERENCES `privilegios` (`Id_Privilegios`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
--- --------------------------------------------------------
+----------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `entrada_medicamentos`
@@ -270,6 +256,23 @@ CREATE TABLE IF NOT EXISTS `sexos` (
   PRIMARY KEY (`Identificador`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
+
+--
+-- veterinaria.empleados definition
+
+CREATE TABLE `empleados` (
+  `DUI` varchar(10) NOT NULL,
+  `Nombre_Empleado` varchar(40) DEFAULT NULL,
+  `Apellido` varchar(40) DEFAULT NULL,
+  `Priviliegios` int(2) DEFAULT NULL,
+  `usuario` varchar(100) NOT NULL,
+  `contrasenia` varchar(100) NOT NULL,
+  PRIMARY KEY (`DUI`),
+  KEY `FKPrivilegios` (`Priviliegios`),
+  CONSTRAINT `FKPrivilegios` FOREIGN KEY (`Priviliegios`) REFERENCES `privilegios` (`Id_Privilegios`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+-- ----
+
 --
 -- Volcado de datos para la tabla `sexos`
 --
@@ -289,13 +292,7 @@ ALTER TABLE `citas`
   ADD CONSTRAINT `FKEstado1` FOREIGN KEY (`Estado`) REFERENCES `estados` (`Id_Estado`),
   ADD CONSTRAINT `FKPaciente` FOREIGN KEY (`Paciente`) REFERENCES `mascotas` (`Id_mascota`);
 
---
--- Filtros para la tabla `empleados`
---
-ALTER TABLE `empleados`
-  ADD CONSTRAINT `FKPrivilegios` FOREIGN KEY (`Priviliegios`) REFERENCES `privilegios` (`Id_Privilegios`);
 
---
 -- Filtros para la tabla `entrada_medicamentos`
 --
 ALTER TABLE `entrada_medicamentos`
