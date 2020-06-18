@@ -16,8 +16,7 @@ if(isset($_GET["dato"])){
 	<th>Fecha</th>
 	<th>Paciente</th>
 	<th>Estado</th>
-	<th>Detalles</th>
-	<th>Opciones</th>
+	
 	</tr>";
 	if(!$cita==null){
 
@@ -28,10 +27,11 @@ if(isset($_GET["dato"])){
 			<td>$c[Hora]</td>
 			<td>$c[Fecha]</td>
 			<td>$c[Nombre]</td>
-			<td>$c[Estado]</td>
-			<td>$c[Detalles]</td>";
-			$respuesta.= "<td><button type='submmit' class='btn btn-forms' name='editCita'><i class='far fa-edit'></i>Editar</button></td>
-			</tr>";
+			<td>$c[Estado]</td>";
+			
+			//"<td><button type='submit' class='btn btn-forms' value='$c[Id_Cita]' name='editCita'><i class='far fa-edit'></i>Editar</button></td>
+			$respuesta.= 
+				"</tr>";
 		}
 	}
     echo $respuesta.="</table>";

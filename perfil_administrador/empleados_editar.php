@@ -111,7 +111,7 @@
 		  <div class="row mt-4 justify-content-center">
 				<div class="col-6">
 				<div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="activo">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="activo" checked>
     <label class="form-check-label" for="exampleCheck1">Empleado activo</label>
   </div>
 				</div>
