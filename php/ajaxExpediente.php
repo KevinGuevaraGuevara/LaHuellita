@@ -11,7 +11,7 @@
                 <th>Sintomas</th>
                 <th>Vacunas</th>
                 <th>Medicamentos consumidos</th>
-                <th>Opciones</th>
+              
                 </tr>
             </tr>
                 <tr>";
@@ -26,8 +26,7 @@
                 <td>$e[vacunas]</td>
                 <td>$e[consume_medicamento]</td>";
                 
-                $salida.="<td><button type='button' class='btn btn-forms' values='$e[id_expendiente]' name='verInfoExpnt'><i class='far fa-edit'></i>Editar</button>
-                <button type='button' class='btn btn-forms' name='eliminarExpnt'><i class='far fa-trash-alt'></i>Eliminar</button></td>
+                $salida.="
                 
                 </tr>";
                 
