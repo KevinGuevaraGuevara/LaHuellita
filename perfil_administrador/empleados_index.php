@@ -42,14 +42,14 @@
 <body onload="cargarDatos()">
 
 	<div class="container shadow p-3 mb-5 bg-white rounded">
-		<form action="modificar_mascotas.php" method="POST">
+		<form action="empleados_editar.php" method="POST">
 		<div class="row justify-content-start">
 		<div class="col-4 align-content-start mt-4">
 		<label for="busqueda">Buscar:</label>
 		<input type="text" class="form-control" id="busqueda" placeholder="Nombre" onkeyup="cargarDatos()">
 		</div>
 			<div class="col-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
-				<a href="mascota_agregar.php"><button type="button" class="btn btn-agg" name="agregarCliente"><i class="fas fa-plus"></i>Agregar nuevo empleado</button></a>
+				<a href="../Registro.php"><button type="button" class="btn btn-agg" name="agregarCliente"><i class="fas fa-plus"></i>Agregar nuevo empleado</button></a>
 			</div>
 		</div>
 		<hr class="line">

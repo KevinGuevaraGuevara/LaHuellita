@@ -24,7 +24,7 @@
                      <td>$e[Usuario]</td>
                      ";
 
-                $salida.="<td><button type='button' class='btn btn-forms' values='$e[DUI]' name='verInfoExpnt'><i class='far fa-edit'></i>Editar</button>
+                $salida.="<td><button type='button' class='btn btn-forms' values='$e[DUI]' name='empEdit'><i class='far fa-edit'></i>Editar</button>
                 <button type='button' class='btn btn-forms' name='eliminarExpnt'><i class='far fa-trash-alt'></i>Eliminar</button></td>
                 
                 </tr>";
