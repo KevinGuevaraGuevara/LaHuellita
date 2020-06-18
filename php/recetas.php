@@ -33,10 +33,11 @@
         }
 
         public function select($r){
-            $respuesta=parent::ejecutar("select r.Id_recetas, r.Cantidad, m.Nombre, p.Nombre, e.Estado_receta from from recetas r
+            $respuesta=parent::ejecutar("select r.Id_recetas, r.Cantidad, m.Nombre as Medicamento, p.Nombre as Mascota, e.Estado_receta from recetas r
             inner join medicamentos m on m.Id_Medicamento = r.Medicamento
             inner join estados_recetas e on e.Id_Estado = r.Estado
-            inner join mascotas p on p.Id_mascota = r.Nombre where p.Nombre like ('%$r%')");
+            inner join mascotas p on p.Id_mascota = r.Mascota where p.Nombre like ('%$r%')");
+            return $respuesta;
         }
 
         public function selectPaciente(){
