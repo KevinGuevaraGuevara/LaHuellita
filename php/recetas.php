@@ -51,7 +51,7 @@
             $respuesta = parent::ejecutar("select Id_Estado, Estado_receta from estados_recetas");
             return $respuesta;
         }
-        pubic function editar($id){
+        public function editar($id){
             $sql="UPDATE veterinaria.recetas
             SET Mascota=$this->paciente, Medicamento=$this->medicamento, Cantidad='$this->cantidad', Estado=$this->estadoReceta
             WHERE Id_recetas=$id;";

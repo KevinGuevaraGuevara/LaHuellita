@@ -1,6 +1,6 @@
 <?php
 	
-	require("../php/recetas.php");
+	require ("../php/recetas.php");
 	if(!$_SESSION["Priviliegios"]){
         header("location:../index.php");
     }else{
@@ -10,7 +10,7 @@
 				require("../menu_admin.php");
 			break;
 			case 2:
-				header("location:../index.php");
+				require("../menu_veterinario.php");
 			break;
 			case 3:
 				require("../menu.php");
@@ -18,8 +18,8 @@
 		}
   }
 	$recetas= new Receta();
-	$receta=$_POST["receta"];
-	$datos=$recetas->select($receta)->fetch_assoc();
+	//$receta=$_POST["receta"];
+	//$datos=$recetas->select($receta)->fetch_assoc();
 	
 	?>
 

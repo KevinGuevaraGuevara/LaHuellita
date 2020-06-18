@@ -1,13 +1,30 @@
 <?php
-    require ("../menu_veterinario.php");
-    require ("../php/recetas.php");
+    //require ("../menu_veterinario.php");
+	require ("../php/recetas.php");
+	if(!$_SESSION["Priviliegios"]){
+        header("location:../index.php");
+    }else{
+
+		switch($_SESSION["Priviliegios"]){
+			case 1:
+				require("../menu_admin.php");
+			break;
+			case 2:
+				require("../menu_veterinario.php");
+			break;
+			case 3:
+				require("../menu.php");
+			break;
+		}
+  }
+	
     $receta = new Receta();
                     if(isset($_POST["enviarDatosReceta"])){
                         $receta->setMedicamento($_POST["medicamento"]);
                         $receta->setPaciente($_POST["paciente"]);
                         $receta->setCantidad($_POST["cantidad"]);
                         $receta->setEstado($_POST["estadoReceta"]);
-						$receta->editar($_POST["id"])
+						$receta->editar($_POST["id"]);
                     }
 ?>
 <!DOCTYPE html>
