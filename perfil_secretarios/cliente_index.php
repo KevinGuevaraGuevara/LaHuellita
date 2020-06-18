@@ -1,5 +1,6 @@
-<?php
-	if(!$_SESSION["Priviliegios"]){
+<?php 
+require("../php/Clientes.php");
+	if(!isset($_SESSION["Priviliegios"])){
         header("location:../index.php");
     }else{
 

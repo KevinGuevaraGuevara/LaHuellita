@@ -1,6 +1,6 @@
 <?php
 	require("../php/mascotas.php");
-	if(!$_SESSION["Priviliegios"]){
+	if(!isset($_SESSION["Priviliegios"])){
         header("location:../index.php");
     }else{
 

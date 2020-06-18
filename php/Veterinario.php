@@ -25,23 +25,6 @@
         }
 
 
-        public function getNomascota(){
-            return $this->nomMacota;
-        }
-        public function getObservaciones(){
-            return $this->observacion;
-        }
-        public function getSintomas(){
-            return $this->sintoma;
-        }
-        public function getVacunas(){
-            return $this->vacunas;
-        }
-        public function getConsume(){
-            return $this->consume;
-        }
-
-
         public function insert(){
             $sql = "INSERT INTO expediente_mascota
             (vacunas, sintomas, obervaciones, consume_medicamento, mascota_nombre)VALUES('$this->vacunas','$this->sintoma',

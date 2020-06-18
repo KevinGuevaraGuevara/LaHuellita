@@ -1,7 +1,7 @@
 <?php
 	
 	require("../php/veterinario.php");
-	if(!$_SESSION["Priviliegios"]){
+	if(!isset($_SESSION["Priviliegios"])){
         header("location:../index.php");
     }else{
 
@@ -10,7 +10,7 @@
 				require("../menu_admin.php");
 			break;
 			case 2:
-				rrequire("../menu_veterinario.php");
+				require("../menu_veterinario.php");
 			break;
 			case 3:
 				require("../menu.php");

@@ -22,7 +22,7 @@ $mascotas=new Mascotas;
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Estadisticas de citados por genero</title>
+    <title>Estadisticas de clientes por genero</title>
     
 	    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../font-awesome/css/all.css">
@@ -38,6 +38,7 @@ $mascotas=new Mascotas;
 <body>
 
 	<div class="container shadow p-3 mb-5 bg-white rounded">
+    <h1>Estadisticas de clientes por genero</h1>
     <div id="graph" style="height: 250px;"></div>
     
 	</div>

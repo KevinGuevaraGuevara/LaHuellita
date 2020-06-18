@@ -1,7 +1,7 @@
 <?php
 	
 	require("../php/veterinario.php");
-	if(!$_SESSION["Priviliegios"]){
+	if(!isset($_SESSION["Priviliegios"])){
         header("location:../index.php");
     }else{
 

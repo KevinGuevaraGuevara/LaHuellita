@@ -1,6 +1,6 @@
 <?php
 	require("../php/inicio.php");
-	if(!$_SESSION["Priviliegios"]){
+	if(!isset($_SESSION["Priviliegios"])){
         header("location:../index.php");
     }else{
 
@@ -9,10 +9,10 @@
 				require("../menu_admin.php");
 			break;
 			case 2:
-				require("../menu_veterinario.php");
+				header("location:../index.php");
 			break;
 			case 3:
-				require("../menu.php");
+				header("location:../index.php");
 			break;
 		}
   }
