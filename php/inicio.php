@@ -33,11 +33,14 @@ class inicioSesion extends Conexion{
     public function Consulta(){
       //if(!($this->user || $this->pass)){
       //    echo "entro";
-          $datos=parent::ejecutar("select usuario ,contrasenia, Priviliegios from empleados where usuario = '".$this->user."'");
+          $datos=parent::ejecutar("select usuario ,contrasenia, Priviliegios, estado from empleados where usuario = '".$this->user."'");
           if(!$datos==null){
               //while($m=$datos->fetch_assoc()){
                   $m=$datos->fetch_assoc();
                   //echo $this->pass."===>".$m["contrasenia"];
+                  if($m["estado"]!=1){
+                      echo "Usuario no activo";
+                  }else
                   if($this->pass==$m["contrasenia"]){
                       echo "exito";
                       $_SESSION["usuario"]=$this->user;
@@ -86,19 +89,23 @@ class inicioSesion extends Conexion{
     }
 
     public function select($p){
-        $respuesta = parent::ejecutar("select e.DUI, e.Nombre_Empleado, e.Apellido, e.Usuario from empleados e
+        $respuesta = parent::ejecutar("select e.DUI, e.Nombre_Empleado, e.Apellido, e.Usuario, p.Usuario as pri from empleados e
         inner join privilegios p on p.Id_privilegios=e.Priviliegios where p.Usuario like ('%$p%')");
         return $respuesta;
     }
     
-    public function editarEmpleado($usuario){
+    public function editarEmpleado($Dui, $estado){
+       
         $sql="UPDATE veterinaria.empleados
-        SET Nombre_Empleado='$this->Nombre', Apellido='$this->apellido', Privilegios=$this->privilegios
-        WHERE DUI=$usuario";
-
+        SET Nombre_Empleado='$this->Nombre', Apellido='$this->apellido', Priviliegios=$this->privilegios, usuario='$this->user', contrasenia='$this->pass', estado=$estado
+        WHERE DUI='$Dui';";
+        
         parent::ejecutar($sql);
     }
-
+    public function selectE($dui){
+        $respuesta = parent::ejecutar("SELECT * FROM veterinaria.empleados where DUI = '$dui'");
+        return $respuesta;
+    }
     
 }
 ?>

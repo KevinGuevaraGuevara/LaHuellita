@@ -8,6 +8,7 @@
              <th>DUI</th>
              <th>Nombre</th>
              <th>Apellido</th>
+             <th>Usuario</th>
              <th>Privilegio</th>
              <th>Opciones</th>
              </tr>
@@ -22,12 +23,11 @@
                      <td>$e[Nombre_Empleado]</td>
                      <td>$e[Apellido]</td>
                      <td>$e[Usuario]</td>
+                     <td>$e[pri]</td>
                      ";
 
-                $salida.="<td><button type='button' class='btn btn-forms' values='$e[DUI]' name='empEdit'><i class='far fa-edit'></i>Editar</button>
-                <button type='button' class='btn btn-forms' name='eliminarExpnt'><i class='far fa-trash-alt'></i>Eliminar</button></td>
-                
-                </tr>";
+                $salida.="<td><button type='submit' class='btn btn-forms' value='$e[DUI]' name='emple'><i class='far fa-edit'></i>Editar</button></td>
+				</tr>";
                  }
              }
              echo $salida;

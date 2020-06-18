@@ -17,9 +17,9 @@
 			break;
 		}
   }
-    $empleados= new inicioSesion();
-    $empleado = $_POST["empEdit"]
-    $datos = $empleados->select($empleado)->fetch_assoc();
+    $empleados= new inicioSesion;
+    $empleado = $_POST["emple"];
+    $datos = $empleados->selectE($empleado)->fetch_assoc();
 	//$receta=$_POST["receta"];
 	//$datos=$recetas->select($receta)->fetch_assoc();
 	
@@ -56,20 +56,17 @@
 			<hr class="line">
 			<form method="POST" action="empleados_index.php">
 		
-
-			
-		  
 		  
 		  <div class="row mt-4 justify-content-center">
 				<div class="col-6">
 					<label>Privilegio</label>
 					<?php
-					
+				
 					$rol=$empleados->privilegios();
 					echo "<select class='form-control' name='priv'>";
 					
 					while($emp=$rol->fetch_assoc()){
-						if($datos['Id_cliente']==$emp['Id_Cliente']){
+						if($datos['Priviliegios']==$emp['Id_Privilegios']){
 							echo "<option selected value='$emp[Id_Privilegios]'>$emp[Usuario]</option>";
 						}else{
 
@@ -85,31 +82,39 @@
           <div class="row mt-4 justify-content-center">
 				<div class="col-6">
 					<label>Nombre de empleado</label>
-					<input type="text" name="cantidad" class="form-control" value='<?php echo $datos["Nombre_Empleado"]?>'>
+					<input type="text" name="Nombre" class="form-control" value='<?php echo $datos["Nombre_Empleado"]?>'>
 				</div>
 		  </div>
           <div class="row mt-4 justify-content-center">
 				<div class="col-6">
 					<label>Apellido</label>
-					<input type="text" name="cantidad" class="form-control" value='<?php echo $datos["Apellido"]?>'>
+					<input type="text" name="Apellido" class="form-control" value='<?php echo $datos["Apellido"]?>'>
 				</div>
 		  </div>
           <div class="row mt-4 justify-content-center">
 				<div class="col-6">
 					<label>DUI</label>
-					<input type="text" name="cantidad" class="form-control" value='<?php echo $datos["DUI"]?>'>
+					<input type="text" name="DUI" class="form-control" value='<?php echo $datos["DUI"]?>'>
 				</div>
 		  </div>
           <div class="row mt-4 justify-content-center">
 				<div class="col-6">
 					<label>Usuario</label>
-					<input type="text" name="cantidad" class="form-control" value='<?php echo $datos["usuario"]?>'>
+					<input type="text" name="Usuario" class="form-control" value='<?php echo $datos["usuario"]?>'>
 				</div>
 		  </div>
           <div class="row mt-4 justify-content-center">
 				<div class="col-6">
 					<label>Contraseña</label>
-					<input type="text" name="cantidad" class="form-control" value='<?php echo $datos["contrasenia"]?>'>
+					<input type="password" name="contrasenia" class="form-control" >
+				</div>
+		  </div>
+		  <div class="row mt-4 justify-content-center">
+				<div class="col-6">
+				<div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="activo">
+    <label class="form-check-label" for="exampleCheck1">Empleado activo</label>
+  </div>
 				</div>
 		  </div>
 		  <div class="row mt-4 justify-content-center">
@@ -118,7 +123,7 @@
 					<input type="reset" name="cancelar" class="btn btn-forms" value="Limpiar">
 				</div>
 		  </div>
-		  <input type="text" name="id" class="invisible" value='<?php echo $empEdit?>'>
+		  <input type="text" name="id" class="invisible" value='<?php echo $empleado?>'>
 		</form>
 	</div>
 </div>

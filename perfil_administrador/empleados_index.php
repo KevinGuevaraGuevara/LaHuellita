@@ -17,15 +17,20 @@
 		}
   }
 	
-	$empleado = new inicioSesion();
+	$empleados = new inicioSesion();
 	if(isset($_POST["Registrar"])){
-		$empleados->setUser($user);
-		$empleados->setPass($pass);
-		$empleados->setDUI($DUI);
-		$empleados->setNombre($Nombre);
-		$empleados->setPrivilegios($privilegios);
-		$empleados->setApellido($apellido);
-		$empleados->editarEmpleado($usuario);
+		$empleados->setUser($_POST["Usuario"]);
+		$empleados->setPass($_POST["contrasenia"]);
+		$empleados->setDUI($_POST["DUI"]);
+		$empleados->setNombre($_POST["Nombre"]);
+		$empleados->setPrivilegios($_POST["priv"]);
+		$empleados->setApellido($_POST["Apellido"]);
+		if(isset($_POST["activo"])){
+			$activo=1;
+		}else{
+			$activo=2;
+		}
+		$empleados->editarEmpleado($_POST["id"], $activo);
 	}
 	
 ?>
