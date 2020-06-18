@@ -49,7 +49,7 @@
                         </a>
                         
                         <ul class="collapse list-unstyled" id="petSubmenu">
-                            <li><a href="../perfil_secretarios/mascota_agregar.php">Agregar nuevo</a></li>
+                            <li><a href="/LaHuellita/perfil_secretarios/mascota_agregar.php">Agregar nuevo</a></li>
                         </ul>
                         
                     </li>
@@ -64,7 +64,7 @@
                             </svg>
                         </a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li><a href="../perfil_secretarios/citas_index.php">Consultar citas</a></li>
+                            <li><a href="/LaHuellita/perfil_secretarios/citas_index.php">Consultar citas</a></li>
                         </ul>
                     </li>
 

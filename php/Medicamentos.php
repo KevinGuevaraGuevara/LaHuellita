@@ -22,6 +22,9 @@ class Medicamentos extends Conexion{
         $entradas=parent::ejecutar("select sum(cantidad) as entrada from entrada_medicamentos em where Medicamento = $medicamento")->fetch_assoc();
         $salidas=parent::ejecutar("select sum(Cantidad) as salida from recetas r2 where Medicamento = $medicamento and Estado =1")->fetch_assoc();
         
+        echo $entradas["entrada"];
+        echo $salidas["salida"];
+
         return $entradas["entrada"]-$salidas["salida"];
     }
    

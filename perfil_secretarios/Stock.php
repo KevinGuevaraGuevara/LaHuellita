@@ -40,7 +40,7 @@ $medicina= new Medicamentos();
 		<input type="text" class="form-control" id="busqueda" name="busqueda" placeholder="Nombre" onkeyup="cargarDatos()">
 		</div>
 			<div class="col-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
-				<a href="mascota_agregar.php"><button type="button" class="btn btn-agg" name="agregarCliente"><i class="fas fa-plus"></i>Agregar nuevo paciente</button></a>
+				<a href="/LaHuellita/perfil_administrador/Medicamentos_agregar.php"><button type="button" class="btn btn-agg"><i class="fas fa-plus"></i>Agregar nuevo Medicamento</button></a>
 			</div>
 		</div>
 		<hr class="line">
@@ -53,9 +53,7 @@ $medicina= new Medicamentos();
         <div id="respuesta"></div>
 		</div>
 		</div>
-        <div>
-            <input type="submit" Value="Agregar" class="btn btn-success">
-        </div>
+        
 		</form>
 	</div>
 

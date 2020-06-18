@@ -23,7 +23,7 @@
                 <td>$r[Mascota]</td>
                 <td>$r[Medicamento]</td>
                 <td>$r[Cantidad]</td>
-                <td>$r[Estado]</td>
+                <td>$r[Estado_receta]</td>
                 ";
                 $salida.= "<td><button type='submit' class='btn btn-forms' value='$r[Id_recetas]' name='editarReceta'><i class='far fa-edit'></i>Editar</button>
                 <td><button type='button' class='btn btn-forms' name='printReceta' onclick='window.print();'><i class='far fa-edit'></i>Imprimir</button></td>

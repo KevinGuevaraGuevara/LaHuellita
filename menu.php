@@ -46,8 +46,8 @@
                             </a>
                             
                             <ul class="collapse list-unstyled" id="petSubmenu">
-                                <li><a href="../perfil_secretarios/mascota_index.php">Registro de pacientes</a></li>
-                                <li><a href="../perfil_secretarios/mascota_agregar.php">Agregar nuevo</a></li>
+                                <li><a href="/LaHuellita/perfil_secretarios/mascota_index.php">Registro de pacientes</a></li>
+                                <li><a href="/LaHuellita/perfil_secretarios/mascota_agregar.php">Agregar nuevo</a></li>
                             </ul>
                         </li>
                         <li >
@@ -61,8 +61,8 @@
                                 </svg>
                             </a>
                             <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <li><a href="../perfil_secretarios/citas_agregar.php">Programar cita</a></li>
-                                <li><a href="../perfil_secretarios/citas_index.php">Consultar historial</a></li>
+                                <li><a href="/LaHuellita/perfil_secretarios/citas_agregar.php">Programar cita</a></li>
+                                <li><a href="/LaHuellita/perfil_secretarios/citas_index.php">Consultar historial</a></li>
                             </ul>
                         </li>
                       
@@ -78,8 +78,8 @@
                             </a>
                             
                             <ul class="collapse list-unstyled" id="clientSubmenu">
-                                <li><a href="../perfil_secretarios/cliente_index.php">Registros</a></li>
-                                <li><a href="../perfil_secretarios/clientes_agregar.php">Agregar nuevo</a></li>
+                                <li><a href="/LaHuellita/perfil_secretarios/cliente_index.php">Registros</a></li>
+                                <li><a href="/LaHuellita/perfil_secretarios/clientes_agregar.php">Agregar nuevo</a></li>
                             </ul>
                         </li>
                         <li>
