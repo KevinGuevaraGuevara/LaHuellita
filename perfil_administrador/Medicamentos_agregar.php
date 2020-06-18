@@ -2,7 +2,7 @@
 	//require("../menu.php");
 	require("../php/Medicamentos.php");
 	//require("../php/conexion.php");
-	if(!$_SESSION["Priviliegios"]){
+	if(!isset($_SESSION["Priviliegios"])){
         header("location:../index.php");
     }else{
 

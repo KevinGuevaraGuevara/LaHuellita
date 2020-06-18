@@ -1,39 +1,30 @@
 <?php
-	require("../php/inicio.php");
-	if(!isset($_SESSION["Priviliegios"])){
-        header("location:../index.php");
-    }else{
+require("../php/Medicamentos.php");
+//require("../php/conexion.php");
+if(!isset($_SESSION["Priviliegios"])){
+    header("location:../index.php");
+}else{
 
-		switch($_SESSION["Priviliegios"]){
-			case 1:
-				require("../menu_admin.php");
-			break;
-			case 2:
-				header("location:../index.php");
-			break;
-			case 3:
-				header("location:../index.php");
-			break;
-		}
-  }
-	
-	$empleado = new inicioSesion();
-	if(isset($_POST["Registrar"])){
-		$empleados->setUser($user);
-		$empleados->setPass($pass);
-		$empleados->setDUI($DUI);
-		$empleados->setNombre($Nombre);
-		$empleados->setPrivilegios($privilegios);
-		$empleados->setApellido($apellido);
-		$empleados->editarEmpleado($usuario);
-	}
-	
+    switch($_SESSION["Priviliegios"]){
+        case 1:
+            require("../menu_admin.php");
+        break;
+        case 2:
+            header("location:../index.php");
+        break;
+        case 3:
+            require("../menu.php");
+        break;
+    }
+}
+$medicina= new Medicamentos();
+
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Empleados</title>
+	<title>Registro de medicamentos</title>
 	    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="../font-awesome/css/all.css">
         <link rel="stylesheet" href="../css/menu-estilos.css">
@@ -42,26 +33,27 @@
 <body onload="cargarDatos()">
 
 	<div class="container shadow p-3 mb-5 bg-white rounded">
-		<form action="empleados_editar.php" method="POST">
+		<form method="POST">
 		<div class="row justify-content-start">
 		<div class="col-4 align-content-start mt-4">
 		<label for="busqueda">Buscar:</label>
-		<input type="text" class="form-control" id="busqueda" placeholder="Nombre" onkeyup="cargarDatos()">
+		<input type="text" class="form-control" id="busqueda" name="busqueda" placeholder="Nombre" onkeyup="cargarDatos()">
 		</div>
 			<div class="col-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
-				<a href="../Registro.php"><button type="button" class="btn btn-agg" name="agregarCliente"><i class="fas fa-plus"></i>Agregar nuevo empleado</button></a>
+				<a href="/LaHuellita/perfil_administrador/Medicamentos_agregar.php"><button type="button" class="btn btn-agg"><i class="fas fa-plus"></i>Agregar nuevo Medicamento</button></a>
 			</div>
 		</div>
 		<hr class="line">
 		<div class="row justify-content-center">
 			<div class="col-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
-				<h4 class="title-page">Registro de empleados</h4>
+				<h4 class="title-page">Registro de medicamentos</h4>
 			</div>
 		</div>
 		<div class="table-responsive">
-			<div id="respuesta"></div>
+        <div id="respuesta"></div>
 		</div>
 		</div>
+        
 		</form>
 	</div>
 
@@ -75,8 +67,19 @@ function cargarDatos() {
 			document.getElementById("respuesta").innerHTML = this.responseText;
 		}
 	};
-	xhttp.open("GET", `../php/ajaxEmpleados.php?dato=${dato}`,true);
+	xhttp.open("GET", `../php/ajaxMedicamentos.php?dato=${dato}`,true);
 	xhttp.send();
 }
 </script>
+<?php
+if(isset($_POST["agregar"])){
+    $med=$_POST["agregar"];
+    $cantidad=$_POST[$med];
+    $fecha= date("Y")."-";
+    $fecha.= date("m")."-";
+    $fecha.= date("d");
+
+    $medicina->agregar($med,$cantidad,$fecha);
+}
+?>
 </html>

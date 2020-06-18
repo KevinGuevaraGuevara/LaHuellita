@@ -33,15 +33,7 @@
 
                 <ul class="list-unstyled components">
                     <li>
-                        <a href="#">
-                          <svg class="bi bi-house-door-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M6.5 10.995V14.5a.5.5 0 01-.5.5H2a.5.5 0 01-.5-.5v-7a.5.5 0 01.146-.354l6-6a.5.5 0 01.708 0l6 6a.5.5 0 01.146.354v7a.5.5 0 01-.5.5h-4a.5.5 0 01-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z"/>
-                          <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 01.5-.5h1a.5.5 0 01.5.5z" clip-rule="evenodd"/>
-                          </svg>
-                            Inicio
-                        </a>
-                        </li>
-                        <li>
+                   
                           <a href="#petSubmenu" data-toggle="collapse" aria-expanded="false">
                             <svg class="bi bi-pencil-square" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15.502 1.94a.5.5 0 010 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 01.707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 00-.121.196l-.805 2.414a.25.25 0 00.316.316l2.414-.805a.5.5 0 00.196-.12l6.813-6.814z"/>
@@ -53,8 +45,8 @@
                         </a>
                         
                         <ul class="collapse list-unstyled" id="petSubmenu">
-                        <li><a href="../perfil_secretarios/mascota_index.php">Ver lista de pacientes</a></li>
-                            <li><a href="../perfil_secretarios/mascota_agregar.php">Agregar nuevo</a></li>
+                        <li><a href="/LaHuellita/perfil_secretarios/mascota_index.php">Ver lista de pacientes</a></li>
+                            <li><a href="/LaHuellita/perfil_secretarios/mascota_agregar.php">Agregar nuevo</a></li>
                         </ul>
                         
                     </li>
@@ -70,8 +62,8 @@
                         </a>
                         
                         <ul class="collapse list-unstyled" id="empSubmenu">
-                        <li><a href="../perfil_administrador/empleados_index.php">Ver lista de empleados</a></li>
-                            <li><a href="../Registro.php">Agregar nuevo</a></li>
+                        <li><a href="/LaHuellita/perfil_administrador/empleados_index.php">Ver lista de empleados</a></li>
+                            <li><a href="/LaHuellita/perfil_administrador/Registro.php">Agregar nuevo</a></li>
                         </ul>
                         
                     </li>
@@ -100,19 +92,12 @@
                             </svg>
                         </a>
                         <ul class="collapse list-unstyled" id="stockSubmenu">
-                            <li><a href="../perfil_administrador/Medicamentos_agregar.php">Registrar medicamento</a></li>
+                            <li><a href="/LaHuellita/perfil_administrador/Medicamentos_agregar.php">Registrar medicamento</a></li>
+                            <li><a href="/LaHuellita/perfil_administrador/Stock.php">Existencias</a></li>
                             
                         </ul>
                     </li>
      
-                    <li>
-                            <a href="../perfil_administrador/Medicamentos_agregar.php" data-toggle="collapse" aria-expanded="false">
-                                <svg class="bi bi-circle-half" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 100-6 3 3 0 000 6zm-5.784 6A2.238 2.238 0 015 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 005 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" clip-rule="evenodd"/>
-                            </svg>
-                            Medicamentos
-                        </a>
-                    </li>
                     <li>
                         <a href="#rectSubmenu" data-toggle="collapse" aria-expanded="false">
                             <svg class="bi bi-calendar" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -124,15 +109,15 @@
                             </svg>
                             </a>
                             <ul class="collapse list-unstyled" id="rectSubmenu">
-                            <li><a href="../perfil_veterinario/recetas_index.php">Registro de recetas</a></li>
-                            <li><a href="../perfil_veterinario/recetas_agregar.php">Extender nueva receta</a></li>
+                            <li><a href="/LaHuellita/perfil_veterinario/recetas_index.php">Registro de recetas</a></li>
+                            <li><a href="/LaHuellita/perfil_veterinario/recetas_agregar.php">Extender nueva receta</a></li>
                         </ul>
                         
                         
                     </li>
                    
                      <li>
-                     <a href="">
+                     <a href="/LaHuellita/perfil_administrador/estadisticas.php">
                      <svg class="bi bi-bar-chart" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                        <path fill-rule="evenodd" d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5h-2v12h2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"/>
                     </svg>

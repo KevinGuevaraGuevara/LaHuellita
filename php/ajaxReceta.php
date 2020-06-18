@@ -26,7 +26,7 @@
                 <td>$r[Estado_receta]</td>
                 <td></td>
                 ";
-                $salida.= "<td><button type='submit' class='btn btn-forms' value='$r[Id_recetas]' name='editarReceta'><i class='far fa-edit'></i>Editar</button>
+                $salida.= "
                 <td><button type='button' class='btn btn-forms' name='printReceta' onclick='window.print();'><i class='far fa-edit'></i>Imprimir</button></td>
 				</tr>";
             }
