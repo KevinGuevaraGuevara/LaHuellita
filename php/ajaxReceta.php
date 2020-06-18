@@ -24,6 +24,7 @@
                 <td>$r[Medicamento]</td>
                 <td>$r[Cantidad]</td>
                 <td>$r[Estado_receta]</td>
+                <td></td>
                 ";
                 $salida.= "
                 <td><button type='button' class='btn btn-forms' name='printReceta' onclick='window.print();'><i class='far fa-edit'></i>Imprimir</button></td>

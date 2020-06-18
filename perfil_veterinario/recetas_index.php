@@ -40,7 +40,7 @@
 
 	<div class="container shadow p-3 mb-5 bg-white rounded">
 		
-		
+		<form action="recetas_editar.php">
 		<div class="row justify-content-between">
 		<div class="col-5 col-lg-5 col-md-6 col-sm-12 col-xs-12">
 		
@@ -63,6 +63,8 @@
             </table>
 		</div>
 		</div>
+		</form>
+
 	</div>
 
 </body>

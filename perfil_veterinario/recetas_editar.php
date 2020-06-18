@@ -50,7 +50,7 @@
 		<div class="row">
 			<div class="col col-lg-12 col-md-8 col-sm-4">
 				<div class="bg-form">
-			<h4><i class="far fa-clock"></i>Modificar datos de la receta/h4>
+			<h4><i class="far fa-clock"></i>Modificar datos de la receta</h4>
 			<hr class="line">
 			<form method="POST" action="recetas_index.php">
 		
@@ -61,7 +61,7 @@
 					<label>Paciente</label>
 					<?php
 					
-					$pacientes=$receta->selectPaciente();
+					$pacientes=$recetas->selectPaciente();
 					echo "<select class='form-control' name='pacientes'>";
 					
 					while($paciente=$pacientes->fetch_assoc()){
@@ -131,7 +131,7 @@
 					<input type="reset" name="cancelar" class="btn btn-forms" value="Limpiar">
 				</div>
 		  </div>
-		  <input type="text" name="id" class="invisible" value='<?php echo $receta?>'>
+		  <input type="text" name="id" class="invisible" value='<?php echo $editarReceta?>'>
 		</form>
 	</div>
 </div>
