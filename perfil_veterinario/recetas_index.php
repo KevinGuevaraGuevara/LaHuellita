@@ -47,13 +47,10 @@
 		<input type="text" class="form-control col-5 align-content-start mt-4" placeholder="Buscar por nombre" id="nombre" name="nombre" onkeyup="cargarDatos()">
 			</div>
 		<div class="col-4 col-lg-4 col-md-6 col-sm-12 col-xs-12">
-				<a href="recetas_agregar.php"><button type="button" class="btn btn-agg" name="agregarExpe"><i class="fas fa-plus"></i>Agregar nuevo expediente</button></a>
+				<a href="recetas_agregar.php"><button type="button" class="btn btn-agg" name="agregarExpe"><i class="fas fa-plus"></i>Extender nueva receta</button></a>
 			</div>
 		</div>
 
-		
-	
-			
 		
 		<hr class="line">
 		<div class="row justify-content-center">

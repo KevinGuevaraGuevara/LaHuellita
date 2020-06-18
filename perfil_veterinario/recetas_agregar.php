@@ -1,5 +1,6 @@
 <?php
-    require ("../php/recetas.php");
+	require ("../php/recetas.php");
+	
 	if(!$_SESSION["Priviliegios"]){
         header("location:../index.php");
     }else{
@@ -17,7 +18,8 @@
 		}
   }
 
-    $recet=new Receta();
+	$recet=new Receta;
+	
 ?>
 <!DOCTYPE html>
 <html>
@@ -87,7 +89,7 @@
           <div class="row mt-4 justify-content-center">
 				<div class="col-6">
 					<label>Cantidad</label>
-					<input type="text" name="cantidad" class="form-control" required>
+					<input type="number" name="cantidad" class="form-control" required>
 				</div>
 		  </div>
 		  <div class="row mt-4 justify-content-center">
@@ -108,14 +110,12 @@
 				</div>
 		  </div>
           
-		  
 		  <div class="row mt-4 justify-content-center">
 				<div class="col-6">
 					<input type="submit" name="enviarDatosReceta" class="btn btn-forms" value="Registrar">
 					<input type="reset" name="cancelar" class="btn btn-forms" value="Limpiar">
 				</div>
 		  </div>
-		 
 			
 		</form>
 	</div>
@@ -126,13 +126,14 @@
 		
 	</div>
 	<?php
+	
 	if(isset($_POST["enviarDatosReceta"])){
-		
-        
+	
         $recet->setPaciente($_POST["paciente"]);
         $recet->setMedicamento($_POST["medicamento"]);
         $recet->setCantidad($_POST["cantidad"]);
-        $recet->setEstado($_POST["estadoReceta"]);
+		$recet->setEstado($_POST["estadoReceta"]);
+		
         $recet->insertReceta();
 
 	}

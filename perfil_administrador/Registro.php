@@ -1,16 +1,16 @@
 <?php
-    require("php/inicio.php");
+	require("../php/inicio.php");
+	require("../menu_admin.php");
     $inicio= new inicioSesion;
-
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Agregar cliente</title>
-	    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="font-awesome/css/all.css">
-        <link rel="stylesheet" href="css/menu-estilos.css">
-        <link rel="stylesheet" type="text/css" href="css/estilos-formularios.css">
+	    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../font-awesome/css/all.css">
+        <link rel="stylesheet" href="../css/menu-estilos.css">
+        <link rel="stylesheet" type="text/css" href="../css/estilos-formularios.css">
 
         <style type="text/css">
         	/*Form clientes*/

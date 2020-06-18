@@ -94,7 +94,9 @@ class Mascotas extends Conexion{
         return parent::ejecutar($sql)->fetch_assoc();
     }
     public function graficas(){
-        $sql;
+        $sql="select (select count(Id_mascota) from mascotas m2 where Sexo = 1)/(select count(Id_mascota) from mascotas m3 ) as Machos,
+        (select count(Id_mascota) from mascotas m2 where Sexo = 2)/(select count(Id_mascota) from mascotas m3 ) as Hembras";
+        return parent::ejecutar($sql)->fetch_assoc();
     }
 
 }

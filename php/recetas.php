@@ -9,27 +9,34 @@
         private $estadoReceta;
 
         public function setMedicamento($medicamento){
-            $this->medicamento=parent::blacklist($medicamento);
+            $this->medicamento=($medicamento);
         }
 
         public function setCantidad($cantidad){
-            $this->medicamento=parent::blacklist($cantidad);
+            $this->cantidad=($cantidad);
         }
 
         public function setPaciente($paciente){
-            $this->paciente=parent::blacklist($paciente);
+            $this->paciente=($paciente);
         }
 
         public function setEstado($estadoReceta){
-            $this->estadoReceta=parent::blacklist($estadoReceta);
+            $this->estadoReceta=($estadoReceta);
         }
 
 
         public function insertReceta(){
-            $sql="INSERT INTO recetas
-            (Cantidad, Mascota, Medicamento, Estado)
-            VALUES ($this->cantidad, '$this->paciente', $this->medicamento, $this->estadoReceta)";
+           $stock=parent::ejecutar("select (select sum(cantidad) as entrada from entrada_medicamentos em where Medicamento = $this->medicamento)-
+(select sum(Cantidad) as salida from recetas r2 where Medicamento = $this->medicamento and Estado =1) - $this->cantidad as 'maximo'")->fetch_assoc();
+            $cantidad=$stock["maximo"];
+           if($cantidad<0 && $this->estadoReceta==1){
+               echo "No se puede ralizar esta transaccion";
+           }else{
+               echo "$this->cantidad";
+                $sql="insert into recetas (Mascota ,Medicamento ,Cantidad ,Estado ) values
+                 ($this->paciente,$this->medicamento,$this->cantidad,$this->estadoReceta)";
             parent::ejecutar($sql);
+        }
         }
 
         public function select($r){
@@ -58,6 +65,7 @@
             WHERE Id_recetas=$id;";
             parent::ejecutar($sql);
         }
+       
         
     }
 ?>

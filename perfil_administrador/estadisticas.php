@@ -1,5 +1,5 @@
 <?php
-require("../php/inicio.php");
+require("../php/mascotas.php");
 if(!$_SESSION["Priviliegios"]){
     header("location:../index.php");
 }else{
@@ -16,6 +16,7 @@ if(!$_SESSION["Priviliegios"]){
         break;
     }
 }
+$mascotas=new Mascotas;
 
 ?>
 <!DOCTYPE html>
@@ -38,7 +39,7 @@ if(!$_SESSION["Priviliegios"]){
 
 	<div class="container shadow p-3 mb-5 bg-white rounded">
     <div id="graph" style="height: 250px;"></div>
-        
+    
 	</div>
 
 </body>
@@ -46,8 +47,8 @@ if(!$_SESSION["Priviliegios"]){
 Morris.Donut({
   element: 'graph',
   data: [
-    {value: 70, label: 'Femenino'},
-    {value: 15, label: 'Masculino'},
+    {value: <?php echo $mascotas->graficas()['Machos']*100?>, label: 'Masculino'},
+    {value: <?php echo $mascotas->graficas()['Hembras']*100?>, label: 'Femenino'},
    
   ],
   backgroundColor: '#fff',

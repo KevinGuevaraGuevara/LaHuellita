@@ -58,9 +58,7 @@
 		  <div class="row mt-4 justify-content-center">
 				<div class="col-6">
 					<input type="submit" name="Entrar" class="btn btn-forms" value="Entrar">
-					<a href="Registro.php">
-					<input type="button" name="Registrar" class="btn btn-forms" value="Registrar">
-					</a>
+					
 				</div>
 		  
 		</form>
