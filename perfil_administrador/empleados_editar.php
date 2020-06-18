@@ -18,7 +18,7 @@
 		}
   }
     $empleados= new inicioSesion;
-    $empleado = $_POST["emple"];
+    $empleado = $_POST["emp"];
     $datos = $empleados->selectE($empleado)->fetch_assoc();
 	//$receta=$_POST["receta"];
 	//$datos=$recetas->select($receta)->fetch_assoc();
@@ -65,7 +65,7 @@
 					echo "<select class='form-control' name='priv'>";
 					
 					while($emp=$rol->fetch_assoc()){
-						if($datos['Id_Privilegios']==$emp['Id_Privilegios']){
+						if($datos['Priviliegios']==$emp['Id_Privilegios']){
 							echo "<option selected value='$emp[Id_Privilegios]'>$emp[Usuario]</option>";
 						}else{
 

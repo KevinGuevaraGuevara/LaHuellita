@@ -18,7 +18,7 @@
 		}
   }
     $citas= new Citas();
-    $cita = $_POST["editCita"]
+    $cita = $_POST["editCita"];
     $datos = $citas->select($cita)->fetch_assoc();
 	//$receta=$_POST["receta"];
 	//$datos=$recetas->select($receta)->fetch_assoc();
