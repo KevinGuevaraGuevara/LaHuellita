@@ -1,5 +1,5 @@
 <?php
-    require("inicio.php");
+    require ("inicio.php");
 
     $listEmpleados = new inicioSesion();
     $nombre=$_GET["dato"];
@@ -26,8 +26,10 @@
                      <td>$e[pri]</td>
                      ";
 
-                $salida.="<td><button type='submit' class='btn btn-forms' value='$e[DUI]' name='emple'><i class='far fa-edit'></i>Editar</button></td>
-				</tr>";
+                $salida.="<td><button type='button' class='btn btn-forms' values='$e[DUI]' name='empEdit'><i class='far fa-edit'></i>Editar</button>
+                </td>
+                
+                </tr>";
                  }
              }
              echo $salida;

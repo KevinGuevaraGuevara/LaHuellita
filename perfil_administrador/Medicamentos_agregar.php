@@ -49,7 +49,7 @@
 		<div class="row">
 			<div class="col col-lg-12 col-md-8 col-sm-4">
 				<div class="bg-form">
-			<h4><i class="far fa-clock"></i>Programar nueva cita</h4>
+			<h4><i class="far fa-clock"></i>Agregar nuevo medicamento</h4>
 			<hr class="line">
 			<form method="POST">
 		

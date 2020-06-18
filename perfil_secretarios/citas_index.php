@@ -63,7 +63,7 @@
 				<h4 class="title-page">Registro de citas</h4>
 			</div>
 		</div>
-		<form action="citas_agregar.php">
+		<form action="citas_editar.php">
 		<div class="table-responsive">
 			<div id="respuesta"></div>
 		</div>

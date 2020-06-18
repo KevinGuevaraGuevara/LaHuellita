@@ -30,7 +30,7 @@ if(isset($_GET["dato"])){
 			<td>$c[Nombre]</td>
 			<td>$c[Estado]</td>
 			<td>$c[Detalles]</td>";
-			$respuesta.= "<td><button type='submmit' class='btn btn-forms' name='verInfoCliente'><i class='far fa-edit'></i>Editar</button></td>
+			$respuesta.= "<td><button type='submmit' class='btn btn-forms' name='editCita'><i class='far fa-edit'></i>Editar</button></td>
 			</tr>";
 		}
 	}
