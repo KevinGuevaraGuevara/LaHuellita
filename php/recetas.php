@@ -28,7 +28,7 @@
         public function insertReceta(){
             $sql="INSERT INTO recetas
             (Cantidad, Mascota, Medicamento, Estado)
-            VALUES ('$this->cantidad', $this->paciente, $this->medicamento, $this->estadoReceta)";
+            VALUES ($this->cantidad, '$this->paciente', $this->medicamento, $this->estadoReceta)";
             parent::ejecutar($sql);
         }
 

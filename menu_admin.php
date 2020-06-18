@@ -53,8 +53,8 @@
                         </a>
                         
                         <ul class="collapse list-unstyled" id="petSubmenu">
-                        <li><a href="../perfil_secretarios/mascota_index.php">Ver lista de empleados</a></li>
-                            <li><a href="../perfil_secretarios/mascota_agregar.php">Agregar nuevo</a></li>
+                        <li><a href="/LaHuellita/perfil_secretarios/mascota_index.php">Ver lista de empleados</a></li>
+                            <li><a href="/LaHuellita/perfil_secretarios/mascota_agregar.php">Agregar nuevo</a></li>
                         </ul>
                         
                     </li>
@@ -69,8 +69,8 @@
                             </svg>
                         </a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li><a href="../perfil_secretarios/citas_index.php">Registro de citas</a></li>
-                            <li><a href="../perfil_secretarios/citas_agregar.php">Programar nueva cita</a></li>
+                            <li><a href="/LaHuellita/perfil_secretarios/citas_index.php">Registro de citas</a></li>
+                            <li><a href="/LaHuellita/perfil_secretarios/citas_agregar.php">Programar nueva cita</a></li>
                         </ul>
                     </li>
      
@@ -97,8 +97,8 @@
                             </a>
                             
                             <ul class="collapse list-unstyled" id="medSubmenu">
-                                <li><a href="#">Registros</a></li>
-                                <li><a href="Medicamentos_agregar.php">Agregar nuevo</a></li>
+                                <li><a href="/LaHuellita/perfil_secretarios/stock.php">Registros</a></li>
+                                <li><a href="/LaHuellita/perfil_administrador/Medicamentos_agregar.php">Agregar nuevo</a></li>
                             </ul>
                         </li>
                    
@@ -112,8 +112,8 @@
                             Stock
                         </a>
                         <ul class="collapse list-unstyled" id="rectSubmenu">
-                            <li><a href="../perfil_veterinario/recetas_index.php">Registro de recetas</a></li>
-                            <li><a href="../perfil_secretarios/recetas_agregar.php">Extender nueva receta</a></li>
+                            <li><a href="/LaHuellita/perfil_veterinario/recetas_index.php">Registro de recetas</a></li>
+                            <li><a href="/LaHuellita/perfil_secretarios/recetas_agregar.php">Extender nueva receta</a></li>
                         </ul>
                     </li>
                    
