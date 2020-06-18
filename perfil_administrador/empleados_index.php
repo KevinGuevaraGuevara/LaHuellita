@@ -1,5 +1,5 @@
 <?php
-	require("../php/inicio.php");
+	require ("../php/inicio.php");
 	if(!isset($_SESSION["Priviliegios"])){
         header("location:../index.php");
     }else{
