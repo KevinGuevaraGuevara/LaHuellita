@@ -53,8 +53,8 @@
                         </a>
                         
                         <ul class="collapse list-unstyled" id="petSubmenu">
-                        <li><a href="/LaHuellita/perfil_secretarios/mascota_index.php">Ver lista de empleados</a></li>
-                            <li><a href="/LaHuellita/perfil_secretarios/mascota_agregar.php">Agregar nuevo</a></li>
+                        <li><a href="/LaHuellita/perfil_administrador/empleados_index.php">Ver lista de empleados</a></li>
+                            <li><a href="/LaHuellita/perfil_administrador/Medicamentos_agregar.php">Agregar nuevo</a></li>
                         </ul>
                         
                     </li>

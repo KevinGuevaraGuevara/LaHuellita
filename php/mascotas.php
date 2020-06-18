@@ -61,8 +61,7 @@ class Mascotas extends Conexion{
         inner join razas r on r.Id_raza = m.Raza where m.Nombre like ('%$n%') ");
         return $respuesta;
     }
-    protected function delete(){}
-    protected function modifie(){}
+   
 
     public function selectSexos(){
         $respuesta = parent::ejecutar("select * from sexos");
@@ -94,6 +93,7 @@ class Mascotas extends Conexion{
         $sql="SELECT Nombre, Fecha_nacimiento FROM mascotas where id_mascota=$id";
         return parent::ejecutar($sql)->fetch_assoc();
     }
+    
 
 }
 
