@@ -93,7 +93,9 @@ class Mascotas extends Conexion{
         $sql="SELECT Nombre, Fecha_nacimiento FROM mascotas where id_mascota=$id";
         return parent::ejecutar($sql)->fetch_assoc();
     }
-    
+    public function graficas(){
+        $sql;
+    }
 
 }
 
