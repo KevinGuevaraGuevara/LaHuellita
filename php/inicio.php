@@ -38,24 +38,27 @@ class inicioSesion extends Conexion{
               //while($m=$datos->fetch_assoc()){
                   $m=$datos->fetch_assoc();
                   //echo $this->pass."===>".$m["contrasenia"];
-                  if($m["estado"]!=1){
-                      echo "Usuario no activo";
-                  }else
+                  
                   if($this->pass==$m["contrasenia"]){
-                      echo "exito";
-                      $_SESSION["usuario"]=$this->user;
-                      $_SESSION["pass"]=$this->pass;
-                      $_SESSION["Priviliegios"]=$m["Priviliegios"];
-                      switch($_SESSION["Priviliegios"]){
-                          case 1:
-                            header("location:perfil_administrador/empleados_index.php");
-                          break;
-                          case 2:
-                            header("location:perfil_veterinario/expediente_index.php");
-                          break;
-                          case 3:
-                            header("location:perfil_secretarios/citas_agregar.php");
-                        break;
+                    if($m["estado"]==2){
+                        echo "Usuario no activo";
+                    }else{
+
+                        echo "exito";
+                        $_SESSION["usuario"]=$this->user;
+                        $_SESSION["pass"]=$this->pass;
+                        $_SESSION["Priviliegios"]=$m["Priviliegios"];
+                        switch($_SESSION["Priviliegios"]){
+                            case 1:
+                                header("location:perfil_administrador/empleados_index.php");
+                            break;
+                            case 2:
+                                header("location:perfil_veterinario/expediente_index.php");
+                            break;
+                            case 3:
+                                header("location:perfil_secretarios/citas_agregar.php");
+                            break;
+                        }
                     }
                     //header("location:../perfil.php");
                     
